@@ -1,0 +1,141 @@
+:root {
+    --black-0: #16191B;
+    --black-1: #1E2124;
+    --primary-0: #2ECC71;
+    --primary-1: hsl(145, 53%, 32%);
+}
+
+* {
+    transition: all 0.2s
+}
+
+body {
+    background-color: var(--black-0);
+    color: var(--primary-0);
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+::selection {
+    background-color: var(--primary-0);
+    color: var(--black-0);
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.description {
+    font-size: 14px;
+    color: var(--primary-1);
+    margin-bottom: 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* input[type="text" */
+input[type="text"] {
+    background-color: var(--black-1);
+    border: none;
+    border-radius: 5px;
+    color: var(--primary-1);
+    font-size: 16px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    border: 2px solid var(--black-1);
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-1);
+}
+
+
+/* button */
+button {
+    position: relative;
+    background-color: var(--primary-1);
+    border: none;
+    border-radius: 5px;
+    color: var(--black-0);
+    font-size: 16px;
+    width: 100px;
+    font-weight: 600;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid var(--primary-1);
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--primary-0);
+    border-color: var(--primary-0);
+    color: var(--black-1);
+}
+
+button:active {
+    background-color: var(--primary-1);
+    border-color: var(--primary-1);
+    color: var(--black-1);
+}
+
+button#copy:focus::after {
+    content: 'Copied!';
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 150%;
+    left: 50%;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    background-color: var(--primary-0);
+    animation: fade 1s ease-in-out forwards;
+}
+
+button#copy:focus::before {
+    content: '';
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -94%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid var(--primary-0);
+    animation: fade 1s ease-in-out forwards;
+}
+
+
+/* @keyframes */
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
