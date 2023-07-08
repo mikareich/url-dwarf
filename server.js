@@ -1,4 +1,3 @@
-const schedule = require("node-schedule");
 const express = require("express");
 const app = express();
 
