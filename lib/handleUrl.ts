@@ -22,3 +22,8 @@ export const formatUrl = (url: string) => {
 export const protocolRelativeUrl = (url: string) => {
   return protocolRegex.test(url) ? url.replace(protocolRegex, '') : url
 }
+
+export const generateUrl = ( shortSlug: string) => {
+  const {VERCEL_URL} = process.env
+  return `${VERCEL_URL}/${shortSlug}`
+}

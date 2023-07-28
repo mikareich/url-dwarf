@@ -3,7 +3,6 @@ import mongoose from 'mongoose'
 export type DwarfType = {
   originalUrl: string
   protocolRelativeUrl: string
-  shortUrl: string
   shortSlug: string
   visits: number
 } & mongoose.Document
@@ -14,10 +13,6 @@ const DwarfScheme = new mongoose.Schema({
     required: true,
   },
   protocolRelativeUrl: {
-    type: String,
-    required: true,
-  },
-  shortUrl: {
     type: String,
     required: true,
   },

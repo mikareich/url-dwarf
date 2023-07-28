@@ -1,4 +1,4 @@
-import { protocolRelativeUrl } from '@/lib/handleUrl'
+import { generateUrl } from '@/lib/handleUrl'
 import { loadDwarfs } from '@/lib/loadDwarfs'
 import Link from 'next/link'
 
@@ -19,12 +19,12 @@ export default async function DwarfTable() {
           <tr key={dwarf._id}>
             <td>
               <Link href={dwarf.originalUrl} className="link">
-                {protocolRelativeUrl(dwarf.originalUrl)}
+                {dwarf.originalUrl}
               </Link>
             </td>
             <td>
-              <Link href={dwarf.shortUrl} className="link">
-                {protocolRelativeUrl(dwarf.shortUrl)}
+              <Link href={generateUrl(dwarf.shortSlug)} className="link">
+                {generateUrl(dwarf.shortSlug)}
               </Link>
             </td>
             <td className="text-right">{dwarf.visits}</td>

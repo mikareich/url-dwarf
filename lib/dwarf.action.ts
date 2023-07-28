@@ -23,11 +23,9 @@ export default async function createDwarfFromForm(
 
   // if it isn't, create a new dwarf
   const shortSlug = await generateShortSlug()
-  const shortUrl = `${hostUrl}/${shortSlug}`
   dwarf = await Dwarf.create({
     originalUrl,
     protocolRelativeUrl,
-    shortUrl,
     shortSlug,
     visits: 0,
   })
