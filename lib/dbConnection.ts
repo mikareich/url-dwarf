@@ -7,7 +7,9 @@ declare global {
   }
 }
 
-const MONGODB_URI = process.env.MONGODB_URI
+const { MONGODB_USERNAME, MONGODB_PASSWORD } = process.env
+
+const MONGODB_URI = `mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@dwarf.gaf2loj.mongodb.net/?retryWrites=true&w=majority`
 
 if (!MONGODB_URI) {
   throw new Error(

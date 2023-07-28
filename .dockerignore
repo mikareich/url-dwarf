@@ -1,6 +1,0 @@
-/node_modules
-.next
-.git
-.devcontainer
-.eslintrc.json
-.prettierrc.json
