@@ -31,5 +31,5 @@ export default async function createDwarfFromForm(
   })
 
   // return the new dwarf
-  return dwarf.shortUrl
+  return dwarf.shortSlug
 }
