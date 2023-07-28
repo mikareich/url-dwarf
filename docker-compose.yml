@@ -2,11 +2,10 @@ version: '3.8'
 
 services:
   app:
-    image: node:20
-    volumes:
-      - ../..:/workspaces:cached
-    command: sleep infinity
-    network_mode: service:db
+    image:
+      build:
+        context: .
+        dockerfile: Dockerfile
 
   db:
     image: mongo:latest

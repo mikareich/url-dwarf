@@ -22,5 +22,7 @@
         "bradlc.vscode-tailwindcss"
       ]
     }
-  }
+  },
+
+  "forwardPorts": [3000]
 }
